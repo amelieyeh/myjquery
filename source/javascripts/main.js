@@ -32,8 +32,8 @@ $(document).ready(function(){
 	$("[data-act=top]").each(function(){
 		var tr = $(this).parents("tr");
 		$("[data-act=top]", tr).on("click", function(){
-			var tr_body = tr.parent();       //先宣tr_top 是此tr的爸爸(tbody)>這樣抓到的是tbody
-			tr_top.prepend(tr);             //把我自己insert到tr_top層級下(在tbody下)的最前面
+			var tbody = tr.parent();       //先宣tr_top 是此tr的爸爸(tbody)>這樣抓到的是tbody,變數命名要直觀易懂
+			tbody.prepend(tr);             //把我自己insert到tr_top層級下(在tbody下)的最前面
 			console.log(tr_top);    //雖然可以work但不知道這樣抓ok不ok =>[<tbody>, prevObject: v.fn.v.init[1], context: <a>, selector: ".parents(tr).parent()"]
 		});
 	});
@@ -41,8 +41,8 @@ $(document).ready(function(){
 	$("[data-act=bottom]").each(function(){
 		var tr = $(this).parents("tr");
 		$("[data-act=bottom]", tr).on("click", function(){
-			var tr_body = tr.parent();       //先宣tr_bottom 是此tr的爸爸(tbody)>這樣抓到的是tbody
-			tr_bottom.append(tr);             //把我自己insert到tr_bottom層級下(在tbody下)的最後面
+			var tbody = tr.parent();       //先宣tr_bottom 是此tr的爸爸(tbody)>這樣抓到的是tbody,變數命名要直觀易懂
+			tbody.append(tr);             //把我自己insert到tr_bottom層級下(在tbody下)的最後面
 			console.log(tr_bottom);    //雖然可以work但不知道這樣抓ok不ok =>[<tbody>, prevObject: v.fn.v.init[1], context: <a>, selector: ".parents(tr).parent()"]
 		});
 	});
